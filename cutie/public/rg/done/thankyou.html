@@ -1,0 +1,835 @@
+<!DOCTYPE html PUBLIC "-//WAPFORUM//DTD XHTML Mobile 1.0//EN" "http://www.wapforum.org/DTD/xhtml-mobile10.dtd">
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Thankyou</title>
+    <meta name="description" content="The pet with the most votes receives R10,000. 2nd place wins R5,000, 3rd place receives R3,000. 1 lucky voter receives R2,000 + R5,000 goes to charity.">
+    <meta name="keywords" content="Cute Pet, pet competition, cutest pet, dog competition, cat competition, pet photo contest, pet photo competition">
+    <script>
+        //Disable Right Click
+        document.addEventListener('contextmenu', event => event.preventDefault());
+    </script>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="https://www.cutepet.co.za/resources/front/css/mini/style.css?v=527" />
+    <link rel="shortcut icon" href="https://www.cutepet.co.za/resources/front/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="https://www.cutepet.co.za/resources/front/images/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="57x57" href="https://www.cutepet.co.za/resources/front/images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://www.cutepet.co.za/resources/front/images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://www.cutepet.co.za/resources/front/images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://www.cutepet.co.za/resources/front/images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://www.cutepet.co.za/resources/front/images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://www.cutepet.co.za/resources/front/images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://www.cutepet.co.za/resources/front/images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://www.cutepet.co.za/resources/front/images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://www.cutepet.co.za/resources/front/images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="https://www.cutepet.co.za/resources/front/images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://www.cutepet.co.za/resources/front/images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="https://www.cutepet.co.za/resources/front/images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://www.cutepet.co.za/resources/front/images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="https://www.cutepet.co.za/resources/front/images/favicon/manifest.json">
+    <meta property="fb:app_id" content="">
+    <meta property="og:description" content="The pet with the most votes receives R10,000. 2nd place wins R5,000, 3rd place receives R3,000. 1 lucky voter receives R2,000 + R5,000 goes to charity.">
+    <meta property="og:image" content="https://www.cutepet.co.za/resources/front/images/og-image.jpg">
+    <meta property="og:image:height" content="1080" />
+    <meta property="og:image:width" content="1920" />
+    <meta property="og:title" content="Cute Pet offers a share of R20,000 in Prizes">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.cutepet.co.za/">
+    <meta name="msapplication-TileImage" content="https://www.cutepet.co.za/resources/front/images/favicon/ms-icon-144x144.png">
+    <meta name="facebook-domain-verification" content="tbt3sqwft3mo2aofw00w0svwhgqt3o" />
+    <meta id="Viewport" name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=yes, width=440" />
+    <script>
+        new function viewport() {
+            if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|bada|iemobile|BB[0-9.,:_-]{2,};/i.test(navigator.userAgent)) {
+                var ww = (window.innerWidth < window.screen.width) ? window.innerWidth : window.screen.width; //get proper width
+                var mw = 440; // min width of site
+                var ratio = ww / mw; //calculate ratio
+                if (ww < mw) { //smaller than minimum size
+                    document.getElementById('Viewport').setAttribute('content', 'initial-scale=' + ratio + ', maximum-scale=' + ratio + ', minimum-scale=' + ratio + ', user-scalable=yes, width=' + ww);
+                } else { //regular size
+                    document.getElementById('Viewport').setAttribute('content', 'initial-scale=1.0, maximum-scale=1, minimum-scale=1.0, user-scalable=yes, width=' + ww);
+                }
+            }
+        };
+    </script>
+    <script>
+        var csrf = '';
+        var csrf_name = 'ci_csrf_token';
+        var dynamicPath = '#';
+        var site_url = '#';
+        var uploadedImages = {};
+        var cropper;
+        var loader;
+    </script>
+    <script type="text/javascript" src="https://www.cutepet.co.za/resources/front/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="https://www.cutepet.co.za/resources/front/js/mini/functions.js?v=522"></script>
+    <script type="text/javascript" src="https://www.cutepet.co.za/resources/front/js/jquery.touchSwipe.min.js"></script>
+    <script>
+        (function(w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-N2MKFGT');
+    </script>
+
+    <script>
+        ! function(f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function() {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '929783277144636');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+                   src="https://www.facebook.com/tr?id=929783277144636&ev=PageView&noscript=1"
+        /></noscript>
+
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script>
+        (adsbygoogle = window.adsbygoogle || []).push({
+            google_ad_client: "ca-pub-5691880111010352",
+            enable_page_level_ads: true
+        });
+    </script>
+
+    <script>
+        ! function(f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function() {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '319328106297928');
+        fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=319328106297928&ev=PageView&noscript=1" /></noscript>
+
+    <script type="text/javascript" async src="https://www.octoboard.com/static/scripts/octoboard.js" data-server-url="https://flow.octoboard.com:30443" data-resource-id="9WfnjForfZHejDtjjck6xkh4da05x63h6iwiu2bfjo"></script>
+    <script async defer src="https://tools.luckyorange.com/core/lo.js?site-id=b8d32322"></script>
+
+    <script>
+        window.ap3c = window.ap3c || {};
+        var ap3c = window.ap3c;
+        ap3c.cmd = ap3c.cmd || [];
+        ap3c.cmd.push(function() {
+            ap3c.init('YZdxIoqEKiv0RMs2Y3V0ZXBldHph', 'https://capture-api.autopilotapp.com/');
+            ap3c.track({
+                v: 0
+            });
+        });
+        var s, t;
+        s = document.createElement('script');
+        s.type = 'text/javascript';
+        s.src = "https://cdn3l.ink/app.js";
+        t = document.getElementsByTagName('script')[0];
+        t.parentNode.insertBefore(s, t);
+    </script>
+    <script async defer src="https://tools.luckyorange.com/core/lo.js?site-id=b8d32322"></script>
+</head>
+
+<body class="page-prizes">
+
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-N2MKFGT"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <header class="site-header">
+        
+            <nav>
+              
+            
+
+</span>
+            </nav>
+        </div>
+        <div class="header-bottom">
+            <a class="site-logo" href="https://www.cutepet.co.za/" title="Cute Pet">
+<svg xmlns="http://www.w3.org/2000/svg" width="257.27" height="57.176" viewBox="0 0 257.27 57.176">
+<g id="Group_149" data-name="Group 149" transform="translate(-47.696 -57.761)">
+<path class="white" data-name="Path 1" d="M68.572,95.5c1.857.9,2.76,2.108,2.76,3.663a3.161,3.161,0,0,1-.7,2.007,2.208,2.208,0,0,1-1.756.853,3.515,3.515,0,0,1-1.355-.2l-1.054-.652a5.4,5.4,0,0,0-.953-.652,5.862,5.862,0,0,0-1.556-.452,7.869,7.869,0,0,0-1.606-.251,8.007,8.007,0,0,0-6.172,2.459A8.841,8.841,0,0,0,53.97,108.6a8.982,8.982,0,0,0,2.258,6.272,7.376,7.376,0,0,0,5.72,2.459,9.112,9.112,0,0,0,3.814-.6l.853-.552a7.873,7.873,0,0,1,1.054-.6,3.161,3.161,0,0,1,3.211.6,3.212,3.212,0,0,1,.753,2.158,3.091,3.091,0,0,1-1.455,2.358,11.483,11.483,0,0,1-3.864,1.756,18.811,18.811,0,0,1-5.118.652,13.1,13.1,0,0,1-7.075-1.907,12.493,12.493,0,0,1-4.767-5.168A16.307,16.307,0,0,1,47.7,108.6a16.01,16.01,0,0,1,1.756-7.527,13.247,13.247,0,0,1,4.867-5.118A13.6,13.6,0,0,1,61.447,94.1,15.25,15.25,0,0,1,68.572,95.5Z" transform="translate(0 -18.102)" fill="#073f5e" />
+<path class="white" data-name="Path 2" d="M126.281,96.051a3.061,3.061,0,0,1,.9,2.258v13.247c0,3.763-1.054,6.724-3.111,8.832s-5.018,3.211-8.832,3.211-6.774-1.054-8.832-3.211-3.111-5.068-3.111-8.832V98.309a3.061,3.061,0,0,1,.9-2.258,2.91,2.91,0,0,1,2.258-.953,2.759,2.759,0,0,1,2.208.953,3.061,3.061,0,0,1,.9,2.258v13.247a6.853,6.853,0,0,0,1.405,4.767,5.408,5.408,0,0,0,4.265,1.505,5.59,5.59,0,0,0,4.265-1.505c.953-1,1.405-2.609,1.405-4.767V98.309a3.061,3.061,0,0,1,.9-2.258,2.86,2.86,0,0,1,2.258-.953A2.81,2.81,0,0,1,126.281,96.051Z" transform="translate(-27.701 -18.6)" fill="#073f5e" />
+<path class="white" data-name="Path 3" d="M175.311,111.952a2.792,2.792,0,0,1-.9,4.215,6.474,6.474,0,0,1-3.513.953,10.385,10.385,0,0,1-5.47-1.355c-1.455-.953-2.208-2.91-2.208-5.871V95.443H160.81a2.808,2.808,0,0,1-2.057-.8,2.859,2.859,0,0,1-.853-2.108,2.708,2.708,0,0,1,.853-2.007,2.808,2.808,0,0,1,2.057-.8h2.409V86.36a3.061,3.061,0,0,1,.9-2.258,3.262,3.262,0,0,1,2.308-.9,2.862,2.862,0,0,1,2.158.9,3.061,3.061,0,0,1,.9,2.258v3.362H173.2a2.861,2.861,0,0,1,2.108.8,2.91,2.91,0,0,1,.8,2.108,2.709,2.709,0,0,1-.8,2.007,2.861,2.861,0,0,1-2.108.8h-3.713v14.2a1.856,1.856,0,0,0,.6,1.556,2.158,2.158,0,0,0,1.556.5,4.215,4.215,0,0,0,1.154-.2,3.459,3.459,0,0,1,1.2-.251A1.655,1.655,0,0,1,175.311,111.952Z" transform="translate(-54.904 -12.673)" fill="#073f5e" />
+<path class="white" data-name="Path 4" d="M225.137,110.007a3.363,3.363,0,0,1-2.208.753H205.718a7.678,7.678,0,0,0,2.86,4.817,7.778,7.778,0,0,0,5.068,1.756,12.042,12.042,0,0,0,3.362-.351,11.778,11.778,0,0,0,1.907-.853l.953-.6a3.969,3.969,0,0,1,1.756-.452,2.71,2.71,0,0,1,1.907.753,2.661,2.661,0,0,1,.753,1.857,3.276,3.276,0,0,1-1.455,2.559,11.9,11.9,0,0,1-3.914,2.007,15.648,15.648,0,0,1-4.968.853,14.955,14.955,0,0,1-7.627-1.857,12.494,12.494,0,0,1-5.068-5.018A15.1,15.1,0,0,1,199.5,109a16.256,16.256,0,0,1,1.857-7.928,13.348,13.348,0,0,1,4.968-5.168,12.845,12.845,0,0,1,6.573-1.806,12.245,12.245,0,0,1,6.523,1.857,13.847,13.847,0,0,1,4.867,5.068,13.549,13.549,0,0,1,1.857,6.925A2.708,2.708,0,0,1,225.137,110.007Zm-19.369-4.466h13.7v-.351a5.621,5.621,0,0,0-2.158-3.763,6.822,6.822,0,0,0-4.416-1.606C208.879,99.82,206.471,101.727,205.768,105.541Z" transform="translate(-75.626 -18.105)" fill="#073f5e" />
+<path class="white" data-name="Path 5" d="M427.473,95.955a13,13,0,0,1,4.616,5.118,15.9,15.9,0,0,1,1.706,7.477,16.608,16.608,0,0,1-1.656,7.527,13.1,13.1,0,0,1-4.566,5.168,11.541,11.541,0,0,1-6.423,1.857,11.687,11.687,0,0,1-4.717-1,12.449,12.449,0,0,1-3.663-2.509v10.237a3.061,3.061,0,0,1-.9,2.258,2.91,2.91,0,0,1-2.258.953,3.061,3.061,0,0,1-2.258-.9,3.261,3.261,0,0,1-.853-2.308V97.812a3.213,3.213,0,0,1,.853-2.258,3.161,3.161,0,0,1,4.47-.046l.046.046a3.061,3.061,0,0,1,.9,2.258v.2a10.936,10.936,0,0,1,3.462-2.76A10.535,10.535,0,0,1,420.95,94.1,11.792,11.792,0,0,1,427.473,95.955Zm-1.806,18.867a9.434,9.434,0,0,0,2.158-6.272,9.282,9.282,0,0,0-2.158-6.222,6.824,6.824,0,0,0-5.469-2.509,7.027,7.027,0,0,0-5.57,2.509,9.283,9.283,0,0,0-2.158,6.222,9.434,9.434,0,0,0,2.158,6.272,7.326,7.326,0,0,0,10.337.7A7.248,7.248,0,0,0,425.667,114.823Z" transform="translate(-178.758 -18.103)" fill="#073f5e" />
+<path class="white" data-name="Path 6" d="M493.589,110.007a3.462,3.462,0,0,1-2.208.753H474.12a7.979,7.979,0,0,0,2.91,4.817,7.778,7.778,0,0,0,5.068,1.756,11.689,11.689,0,0,0,3.312-.351,10.054,10.054,0,0,0,1.907-.853l1-.6a3.968,3.968,0,0,1,1.756-.452,2.66,2.66,0,0,1,2.66,2.609,3.425,3.425,0,0,1-1.455,2.559,12.4,12.4,0,0,1-3.914,2.007,15.648,15.648,0,0,1-4.968.853,15.258,15.258,0,0,1-7.677-1.857,12.39,12.39,0,0,1-5.018-5.018A14.549,14.549,0,0,1,467.9,109a16.26,16.26,0,0,1,1.907-7.928,13.344,13.344,0,0,1,4.968-5.168,12.844,12.844,0,0,1,6.573-1.806,12.246,12.246,0,0,1,6.523,1.857,14.3,14.3,0,0,1,4.867,5.068,14.047,14.047,0,0,1,1.857,6.925A2.91,2.91,0,0,1,493.589,110.007Zm-19.419-4.466h13.7v-.351a5.369,5.369,0,0,0-2.107-3.763,6.822,6.822,0,0,0-4.416-1.606c-4.014,0-6.423,1.907-7.176,5.72Z" transform="translate(-209.347 -18.105)" fill="#073f5e" />
+<path class="white" data-name="Path 7" d="M541.411,111.951a2.792,2.792,0,0,1-.9,4.215,6.473,6.473,0,0,1-3.513.953,10.085,10.085,0,0,1-5.419-1.355q-2.258-1.405-2.258-5.871V95.442h-2.409a2.808,2.808,0,0,1-2.057-.8A2.859,2.859,0,0,1,524,92.532a2.708,2.708,0,0,1,.853-2.007,2.808,2.808,0,0,1,2.057-.8h2.409V86.36a2.91,2.91,0,0,1,.953-2.258,3.061,3.061,0,0,1,2.258-.9,3.012,3.012,0,0,1,2.208.9,3.212,3.212,0,0,1,.853,2.258v3.362H539.3a2.861,2.861,0,0,1,2.107.8,2.961,2.961,0,0,1,.853,2.108,2.708,2.708,0,0,1-.853,2.007,2.861,2.861,0,0,1-2.107.8H535.59v14.2a1.856,1.856,0,0,0,.6,1.556,2.158,2.158,0,0,0,1.556.5,3.98,3.98,0,0,0,1.154-.2,3.458,3.458,0,0,1,1.2-.251A1.554,1.554,0,0,1,541.411,111.951Z" transform="translate(-237.298 -12.673)" fill="#073f5e" />
+<g id="Group_12" data-name="Group 12" transform="translate(160.853 57.761)">
+<path id="Path_8" data-name="Path 8" d="M301.5,101.882a19.52,19.52,0,0,0-26.678,7.095l-.018.031a11.993,11.993,0,0,0,4.366,16.358,11.639,11.639,0,0,0,5.168,1.556,5.22,5.22,0,0,1,4.014,2.308,11.136,11.136,0,0,0,3.914,3.713,11.993,11.993,0,0,0,16.358-4.366,19.52,19.52,0,0,0-7.095-26.678Z" transform="translate(-273.203 -78.429)" fill="#fd6b0d" />
+<path id="Path_9" data-name="Path 9" d="M289.462,78.559c3.613.552,7.125-2.76,7.778-7.426s-1.756-8.781-5.369-9.283-7.125,2.76-7.778,7.427S285.8,78.057,289.462,78.559Z" transform="translate(-278.574 -59.772)" fill="#fd6b0d" />
+<path id="Path_10" data-name="Path 10" d="M316.879,76.547c3.412,1.355,7.828-1.706,9.835-6.824s.8-10.287-2.609-11.642-7.778,1.706-9.785,6.824S313.467,75.192,316.879,76.547Z" transform="translate(-293.196 -57.761)" fill="#fd6b0d" />
+<path id="Path_11" data-name="Path 11" d="M367.1,107.027c-2.308-2.91-7.125-2.91-10.789-.05s-4.817,7.577-2.559,10.487,7.075,2.86,10.789,0S369.358,109.887,367.1,107.027Z" transform="translate(-312.758 -81.215)" fill="#fd6b0d" />
+<path id="Path_12" data-name="Path 12" d="M340.411,91.407c2.86,2.308,7.928.7,11.34-3.563s3.914-9.584,1-11.892-7.928-.7-11.34,3.563S337.5,89.149,340.411,91.407Z" transform="translate(-305.739 -66.298)" fill="#fd6b0d" />
+</g>
+</g>
+</svg>
+</a>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="#" title="Competition">Competition</a>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" title="How It Works">How It Works</a>
+                        <div>
+                            <ul>
+                                <li>
+                                    <a href="#" title="Help">Help</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Rules">Rules</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Prizes">Prizes</a>
+                                </li>
+                                <li>
+                                    <a href="#" title="Winners">Winners</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <a class="how-to-vote-btn" title="How To Vote">How To Vote</a>
+    <div class="how-to-vote">
+        <h3>
+            <svg xmlns="http://www.w3.org/2000/svg" width="12.507" height="19.989" viewBox="0 0 12.507 19.989">
+<path id="Path_64" data-name="Path 64" d="M222.8-163.11l8.228-8.9,8.228,8.9" transform="translate(-161.344 -221.032) rotate(90)" fill="none" stroke="#fd6b0d" stroke-linecap="round" stroke-width="2.5" />
+</svg>
+            <span></span> How To Vote
+        </h3>
+        <p style="color: #fff;">
+            Visit the pets profile to cast your vote. Costs may vary.
+        </p>
+        <dl>
+            <dt class="free-vote">
+<svg xmlns="http://www.w3.org/2000/svg" width="22.123" height="19.164" viewBox="0 0 22.123 19.164">
+<g id="Group_277" data-name="Group 277" transform="translate(0 -32.952)">
+<g id="Icons" transform="translate(0 32.952)">
+<path id="Path_177" data-name="Path 177" d="M22.123,38.926a5.969,5.969,0,0,0-11.062-3.12,5.969,5.969,0,1,0-9.011,7.618l8.466,8.466a.771.771,0,0,0,1.09,0l8.466-8.466A5.952,5.952,0,0,0,22.123,38.926Z" transform="translate(0 -32.952)" fill="#fd6b0d" />
+</g>
+</g>
+</svg>
+<span>Free</span>
+</dt>
+            <dd class="free-vote">
+                Register to get daily free votes.
+            </dd>
+            <dt class="sms-vote">
+<svg xmlns="http://www.w3.org/2000/svg" width="13.519" height="23.873" viewBox="0 0 13.519 23.873">
+<g id="Group_276" data-name="Group 276" transform="translate(-5.951)">
+<path id="Path_175" data-name="Path 175" d="M17.733,0H7.688A1.738,1.738,0,0,0,5.951,1.739v20.4a1.737,1.737,0,0,0,1.737,1.737H17.733a1.738,1.738,0,0,0,1.737-1.737V1.739A1.739,1.739,0,0,0,17.733,0Zm-7.5,1.056h4.959c.125,0,.227.187.227.418s-.1.419-.227.419H10.232c-.126,0-.226-.188-.226-.419S10.106,1.056,10.232,1.056Zm2.479,21.1a1.109,1.109,0,1,1,1.107-1.11A1.111,1.111,0,0,1,12.711,22.157Zm5.457-3.8H7.253V2.934H18.169Z" transform="translate(0)" fill="#fd6b0d" />
+</g>
+</svg>
+<span>SMS</span>
+</dt>
+            <dd class="sms-vote">
+                Vote via premium rate SMS.
+            </dd>
+            <dt class="purchase-vote">
+<svg id="Group_275" data-name="Group 275" xmlns="http://www.w3.org/2000/svg" width="22.541" height="22.541" viewBox="0 0 22.541 22.541">
+<g id="shopping-cart">
+ <path id="Path_176" data-name="Path 176" d="M6.762,18.033a2.254,2.254,0,1,0,2.254,2.254A2.261,2.261,0,0,0,6.762,18.033ZM0,0V2.254H2.254L6.311,10.82l-1.578,2.7a4,4,0,0,0-.225,1.127,2.261,2.261,0,0,0,2.254,2.254H20.287V14.652H7.213a.242.242,0,0,1-.225-.225v-.113L8,12.4h8.34a2.055,2.055,0,0,0,1.916-1.127l4.057-7.326a.62.62,0,0,0,.225-.564,1.065,1.065,0,0,0-1.127-1.127H4.734L3.719,0ZM18.033,18.033a2.254,2.254,0,1,0,2.254,2.254A2.261,2.261,0,0,0,18.033,18.033Z" fill="#fd6b0d" />
+</g>
+</svg>
+<span>Purchase</span>
+</dt>
+            <dd class="purchase-vote">
+                <span class="width-fix">Vote via Credit Card, Zapper or PayPal.</span> </dd>
+            <dt class="bonus-vote">
+<svg xmlns="http://www.w3.org/2000/svg" width="21.241" height="19.889" viewBox="0 0 21.241 19.889">
+<g id="Group_278" data-name="Group 278" transform="translate(0 -16.308)">
+<g id="Group_278-2" data-name="Group 278" transform="translate(1.328 26.903)">
+<g id="Group_277" data-name="Group 277" transform="translate(0 0)">
+<path id="Path_178" data-name="Path 178" d="M32,271.692v7.966a1.329,1.329,0,0,0,1.328,1.328h6.638v-9.293Z" transform="translate(-32 -271.692)" fill="#fd6b0d" />
+</g>
+</g>
+<g id="Group_280" data-name="Group 280" transform="translate(0 16.308)">
+<g id="Group_279" data-name="Group 279" transform="translate(0 0)">
+<path id="Path_179" data-name="Path 179" d="M19.914,21.593h-4.2A5.158,5.158,0,0,0,16.454,21a2.775,2.775,0,0,0,0-3.906,2.805,2.805,0,0,0-3.894,0c-.576.578-2.1,2.929-1.892,4.5h-.1c.21-1.571-1.317-3.922-1.892-4.5a2.808,2.808,0,0,0-3.894,0,2.779,2.779,0,0,0,0,3.906,5.254,5.254,0,0,0,.742.593h-4.2A1.33,1.33,0,0,0,0,22.92v1.991a.664.664,0,0,0,.664.664H9.293V22.92h2.655v2.655h8.629a.664.664,0,0,0,.664-.664V22.92A1.329,1.329,0,0,0,19.914,21.593Zm-10.7-.044a.438.438,0,0,1-.246.044,6.528,6.528,0,0,1-3.241-1.529,1.448,1.448,0,0,1,0-2.034,1.415,1.415,0,0,1,2.011,0C8.635,18.93,9.524,21.229,9.215,21.549Zm3.056.044c-.189,0-.244-.042-.244-.044-.309-.32.58-2.619,1.475-3.519a1.43,1.43,0,0,1,2.011,2.034A6.527,6.527,0,0,1,12.271,21.593Z" transform="translate(0 -16.308)" fill="#fd6b0d" />
+</g>
+</g>
+<g id="Group_282" data-name="Group 282" transform="translate(11.948 26.903)">
+<g id="Group_281" data-name="Group 281" transform="translate(0 0)">
+<path id="Path_180" data-name="Path 180" d="M288,271.692v9.293h6.638a1.328,1.328,0,0,0,1.328-1.328v-7.966Z" transform="translate(-288 -271.692)" fill="#fd6b0d" />
+</g>
+</g>
+</g>
+</svg>
+<span>Redeem Bonus</span>
+</dt>
+            <dd class="bonus-vote">
+                Register to redeem free votes. </dd>
+        </dl>
+    </div>
+    <div class="entries-close-popup">
+        <div>
+            <h2>Why can't I enter?</h2>
+            <p>
+                Entries for next month close 3 days before the end of the month. This allows our team to approve photos and check for duplicate entries.
+                <br /><br /> Your pet will take part in the following month.
+            </p>
+            <a class="close-entries-close-popup" title="Close">Close</a>
+        </div>
+    </div>
+    <script>
+        jQuery(document).ready(function() {
+            var $ = jQuery;
+            $('.open_login_popup_menu').on('click', function() {
+                if ($(this).hasClass('open')) {
+                    $(this).removeClass('open');
+                    $('.login-menu').removeClass('open');
+                } else {
+                    $(this).addClass('open');
+                    $('.login-menu').addClass('open');
+                }
+            });
+
+            $('.enter-close-btn').on('click', function() {
+                $('.entries-close-popup').addClass('show');
+            });
+            $('.close-entries-close-popup').on('click', function() {
+                $('.entries-close-popup').removeClass('show');
+            });
+            $('.close-already-entered-popup').on('click', function() {
+                $('.already-entered-popup').removeClass('show');
+            });
+
+            $('.how-to-vote-btn').on('click', function(e) {
+                e.stopPropagation();
+                $('.how-to-vote').addClass('open');
+            });
+
+            $('body').on('click', function() {
+
+                $('.how-to-vote').removeClass('open');
+                $('.open-more').removeClass('active');
+                $('.footer-more-menu').removeClass('open');
+                $('.footer-more-menu .dropdown').removeClass('open');
+                if ($('.voting-modal').hasClass('open')) {
+
+                } else {
+                    $('.footer-vote').removeClass('active');
+                }
+            });
+            $('.how-to-vote').on('click', 'h3', function() {
+                $('.footer-vote').removeClass('active');
+                $('.how-to-vote').removeClass('open');
+            });
+
+            $('.footer-vote').on('click', function(e) {
+                e.stopPropagation();
+
+                $('.open-more').removeClass('active');
+                $('.footer-more-menu').removeClass('open');
+                $('.footer-more-menu .dropdown').removeClass('open');
+
+                if ($(this).hasClass('active')) {
+                    $(this).removeClass('active');
+                    $('.how-to-vote').removeClass('open');
+                } else {
+                    $(this).addClass('active');
+                    $('.how-to-vote').addClass('open');
+                }
+
+                if ($('.voting-modal').hasClass('open')) {
+                    $('.voting-modal').removeClass('open');
+                }
+            });
+
+            // $('.footer-more-menu').on('click','.dropdown', function(e){
+            //     e.stopPropagation();
+            //     $(this).toggleClass('open');
+            // });
+
+            $('.open-more').on('click', function(e) {
+                $('.footer-vote').removeClass('active');
+                $('.how-to-vote').removeClass('open');
+                e.stopPropagation();
+                if ($(this).hasClass('active')) {
+                    $(this).removeClass('active');
+                    $('.footer-more-menu').removeClass('open');
+                    $('.footer-more-menu .dropdown').removeClass('open');
+                } else {
+                    $(this).addClass('active');
+                    $('.footer-more-menu').addClass('open');
+                }
+            });
+
+        });
+    </script>
+    <main class="how-it-works prize content">
+      
+        <div class="header-banner" style="height: 220px; background-position: top -30px left 16%;background-size: cover; background-image: url(https://www.cutepet.co.za/resources/front/images/prices.jpg)"></div>
+        <section class="page">
+            <div class="header-banner" style="padding: 80px 0 60px">
+                <div class="inner">
+                    <h2  style="text-align:center;">You're vote has been submitted</h2>
+				     <h1  style="text-align:center;">thank you</h1>
+ 
+                    </p>
+                </div>
+            </div>
+           
+            
+			
+
+    </main>
+    <script>
+        jQuery(document).ready(function() {
+            var $ = jQuery;
+
+            $(".big-3-blocks-mobile-slide").swipe({
+                swipe: function(event, direction, distance, duration, fingerCount, fingerData) {
+                    if (direction == 'left') {
+                        if ($('.big-3-blocks-mobile-slide ul').find('.active').next().length) {
+                            $('.big-3-blocks-mobile-slide ul').find('.active').removeClass('active').next().addClass('active');
+                        } else {
+                            $('.big-3-blocks-mobile-slide ul').find('.active').removeClass('active');
+                            $('.big-3-blocks-mobile-slide ul').find('li:first-child').addClass('active');
+                        }
+                        $('.big-3-blocks-mobile-slide .dots span').removeClass('active');
+                        $('.big-3-blocks-mobile-slide .dots').find('span[rel="' + $('.big-3-blocks-mobile-slide ul li.active').attr('rel') + '"]').addClass('active');
+                    } else if (direction == 'right') {
+                        if ($('.big-3-blocks-mobile-slide ul').find('.active').prev().length) {
+                            $('.big-3-blocks-mobile-slide ul').find('.active').removeClass('active').prev().addClass('active');
+                        } else {
+                            $('.big-3-blocks-mobile-slide ul').find('.active').removeClass('active');
+                            $('.big-3-blocks-mobile-slide ul').find('li:last-child').addClass('active');
+                        }
+                        $('.big-3-blocks-mobile-slide .dots span').removeClass('active');
+                        $('.big-3-blocks-mobile-slide .dots').find('span[rel="' + $('.big-3-blocks-mobile-slide ul li.active').attr('rel') + '"]').addClass('active');
+                    }
+                },
+                threshold: 20,
+                allowPageScroll: "vertical"
+            });
+
+            var b3h = 0;
+
+            $('.big-3-blocks-mobile-slide').find('li').each(function() {
+                if (b3h < $(this).height()) {
+                    b3h = $(this).height();
+                }
+            });
+
+            $('.big-3-blocks-mobile-slide').find('li').height(b3h);
+
+
+        });
+    </script>
+    <footer class="site-footer">
+        <div class="footer-top">
+            <div class="inner">
+                <div class="texts">
+                    <a href="#" title="Cute Pet">
+<img src="https://www.cutepet.co.za/resources/front/images/footer-logo.svg" alt="Cute Pet">
+</a>
+                    <p>
+                        The “fan-fur-bulous” fun starts here.<br /> Stand a chance to win a share of R20,000 in cash by showcasing your BFF to the nation.
+                    </p>
+                    <ul>
+                        <li>Cute Pet SA is open to South African residents only.</li>
+                        <li>Competitions are held monthly</li>
+                        <li>Guarantee bragging rights with your free participation certificate download.</li>
+                    </ul>
+                    <p><strong>Cute Pet SA is part of Cutify Media & Marketing (Pty) Ltd. (2014/243685/07).</strong></p>
+                </div>
+                <div class="links">
+                    <h2>More Competitions</h2>
+                    <p>
+                        Cutify is the brains behind a range of fun and interactive voting competitions.<br /><br /> We’ve been running monthly competitions since 2014. Entry is FREE. Most votes win. Costs apply. Enter today.<br /><br /> Cute Pet is committed
+                        to 100% transparency and voter fairness. We abide by the WASPA code of conduct. Be wary of imitations.
+                    </p>
+                    <ul>
+                        <li>
+                            <a href="#" title="Cute Baby" target="_blank">
+<img src="https://www.cutepet.co.za/resources/front/images/cute-baby.png" alt="Cute Baby">
+</a>
+                        </li>
+                        <li>
+                            <a href="#" title="Cute Kid" target="_blank">
+<img src="https://www.cutepet.co.za/resources/front/images/cute-kid.png" alt="Cute Kid">
+</a>
+                        </li>
+                        <li>
+                            <a href="#" title="Super Cute" target="_blank">
+<img src="https://www.cutepet.co.za/resources/front/images/super-cute.png" alt="Super Cute">
+</a>
+                        </li>
+                        <li>
+                            <a href="#" title="Cute Couple" target="_blank">
+<img src="https://www.cutepet.co.za/resources/front/images/cute-couple.png" alt="Cute Couple">
+</a>
+                        </li>
+                    </ul>
+                    <div>
+                        <p>Follow Us:</p>
+                        <a href="#" target="_blank" title="Facebook">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 155.139 155.139" style="enable-background:new 0 0 155.139 155.139;" xml:space="preserve"><g>
+<path d="M89.584,155.139V84.378h23.742l3.562-27.585H89.584V39.184c0-7.984,2.208-13.425,13.67-13.425l14.595-0.006V1.08C115.325,0.752,106.661,0,96.577,0C75.52,0,61.104,12.853,61.104,36.452v20.341H37.29v27.585h23.814v70.761H89.584z" />
+</g>
+</svg>
+</a>
+                        <a href="https://www.instagram.com/cutepetza/" target="_blank" title="Instagram">
+<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+<g>
+<g>
+<path d="M352,0H160C71.648,0,0,71.648,0,160v192c0,88.352,71.648,160,160,160h192c88.352,0,160-71.648,160-160V160C512,71.648,440.352,0,352,0z M464,352c0,61.76-50.24,112-112,112H160c-61.76,0-112-50.24-112-112V160C48,98.24,98.24,48,160,48h192c61.76,0,112,50.24,112,112V352z" />
+</g>
+</g>
+<g>
+<g>
+<path d="M256,128c-70.688,0-128,57.312-128,128s57.312,128,128,128s128-57.312,128-128S326.688,128,256,128z M256,336c-44.096,0-80-35.904-80-80c0-44.128,35.904-80,80-80s80,35.872,80,80C336,300.096,300.096,336,256,336z" />
+</g>
+</g>
+<g>
+<g>
+ <circle cx="393.6" cy="118.4" r="17.056" />
+</g>
+</g>
+</svg>
+</a>
+                        <span>#cutepetza</span>
+                    </div>
+                </div>
+                <div class="displays footer-display-banner">
+                    <div class="active" rel="23">
+                        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+                        <ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-5691880111010352" data-ad-slot="8751340336"></ins>
+                        <script>
+                            (adsbygoogle = window.adsbygoogle || []).push({});
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <nav>
+                <ul>
+                    <li><a href="#" title="Voters Prize">Voters Prize</a></li>
+                    <li><a href="#" title="Terms & Conditions">Terms &amp; Conditions</a></li>
+                    <li><a href="#" title="Privacy Policy">Privacy Policy</a></li>
+                    <li><a href="#" title="Sitemap">Sitemap</a></li>
+                    <li><a href="#" title="Contact Us">Contact Us</a></li>
+                </ul>
+            </nav>
+            <a class="mobile-scroll-nav"></a>
+        </div>
+    </footer>
+   
+
+    <div class="popup submit-mobile-update-otp register-otp-popup">
+        <div class="inner">
+            <div>
+                <span class="close-otp"></span>
+                <h2>Submit OTP</h2>
+                <p>An OTP Pin code has been smsed to your mobile number. Please submit your OTP Pin code below, to verify your mobile number.</p>
+                <input class="register-otp" type="tel" name="otp">
+                <a class="submit-otp submit-register-otp" title="Submit OTP">Submit OTP</a>
+                <p class="error" style="color: red;display: none;clear: both;margin: 0;padding-top: 5px;font-size: 12px;">incorrect OTP</p>
+            </div>
+        </div>
+    </div>
+   
+        <div class="cs-buttons">
+            <a class="cs-privacy" href="#">Privacy Policy</a>
+            <a class="cs-confirm">ACCEPT</a>
+        </div>
+    </div>
+    <script>
+        jQuery(document).ready(function() {
+            var $ = jQuery;
+
+            var scrolling = false;
+
+            $('.mobile-scroll-nav').on('mousedown touchstart ', function(evt) {
+                scrolling = true;
+                startScrolling($('.site-footer .footer-bottom nav'), 50, evt.target.id);
+            });
+
+            $(document).on('mouseup touchend', function() {
+                scrolling = false;
+            });
+
+            function startScrolling(obj, spd, btn) {
+                var travel = (btn.indexOf('up') > -1) ? '-=' + spd + 'px' : '+=' + spd + 'px';
+                if (!scrolling) {
+                    obj.stop();
+                } else {
+                    // recursively call startScrolling while mouse is pressed
+                    obj.animate({
+                        "scrollLeft": travel
+                    }, "fast", "linear", function() {
+                        startScrolling(obj, spd, btn);
+                    });
+                }
+            }
+
+
+            var displaystracked = '';
+
+            window.setInterval(function() {
+                if ($('.log-block-display > div').length > 1) {
+                    if ($('.log-block-display').find('.active').next('div').length) {
+                        $('.log-block-display').find('.active').removeClass('active').next('div').addClass('active');
+                    } else {
+                        $('.log-block-display').find('.active').removeClass('active');
+                        $('.log-block-display > div:first-child').addClass('active');
+                    }
+                    var id = $('.log-block-display').find('.active').attr('rel');
+                    trackBanner(displaystracked, id);
+                    displaystracked += id + ' ';
+                }
+            }, 10000);
+
+            window.setInterval(function() {
+                if ($('.footer-display-banner > div').length > 1) {
+                    if ($('.footer-display-banner').find('.active').next('div').length) {
+                        $('.footer-display-banner').find('.active').removeClass('active').next('div').addClass('active');
+                    } else {
+                        $('.footer-display-banner').find('.active').removeClass('active');
+                        $('.footer-display-banner > div:first-child').addClass('active');
+                    }
+                    var id = $('.footer-display-banner').find('.active').attr('rel');
+                    trackBanner(displaystracked, id);
+                    displaystracked += id + ' ';
+                }
+            }, 10000);
+
+            window.setInterval(function() {
+                if ($('.small-display-banner > div').length > 1) {
+                    if ($('.small-display-banner').find('.active').next('div').length) {
+                        $('.small-display-banner').find('.active').removeClass('active').next('div').addClass('active');
+                    } else {
+                        $('.small-display-banner').find('.active').removeClass('active');
+                        $('.small-display-banner > div:first-child').addClass('active');
+                    }
+                    var id = $('.small-display-banner').find('.active').attr('rel');
+                    trackBanner(displaystracked, id);
+                    displaystracked += id + ' ';
+                }
+            }, 10000);
+
+
+            var banners = [{
+                    "id": "20",
+                    "name": "Cute Pet GA 300 x 600 Footer",
+                    "url": "",
+                    "bannerTypeID": "1",
+                    "image": "https://www.cutepet.co.za/resources/no_image/general.png",
+                    "imageMobile": "",
+                    "googleAd": '1',
+                    "adHtml": '<!-- Cute Pet GA 300*600 --><ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-5691880111010352" data-ad-slot="8751340336"></ins>',
+                    "bannerScript": 'if (typeof adsbygoogle === "undefined") { (adsbygoogle = window.adsbygoogle || []).push({}); }'
+                },
+                {
+                    "id": "22",
+                    "name": "Cute Pet GA 300 x 250",
+                    "url": "",
+                    "bannerTypeID": "2",
+                    "image": "https://www.cutepet.co.za/resources/no_image/general.png",
+                    "imageMobile": "",
+                    "googleAd": '1',
+                    "adHtml": '<!-- Cute Pet GA 300*250 --><ins class="adsbygoogle" style="display:inline-block;width:300px;height:250px" data-ad-client="ca-pub-5691880111010352" data-ad-slot="5820595671"></ins>',
+                    "bannerScript": 'if (typeof adsbygoogle === "undefined") { (adsbygoogle = window.adsbygoogle || []).push({}); }'
+                },
+                {
+                    "id": "23",
+                    "name": "Cute Pet GA 300 x 600(Footer)",
+                    "url": "",
+                    "bannerTypeID": "5",
+                    "image": "https://www.cutepet.co.za/resources/no_image/general.png",
+                    "imageMobile": "",
+                    "googleAd": '1',
+                    "adHtml": '<!-- Cute Pet GA 300*600 --><ins class="adsbygoogle" style="display:inline-block;width:300px;height:600px" data-ad-client="ca-pub-5691880111010352" data-ad-slot="8751340336"></ins>',
+                    "bannerScript": 'if (typeof adsbygoogle === "undefined") { (adsbygoogle = window.adsbygoogle || []).push({}); }'
+                },
+            ];
+
+            if ($('.entries-list li').length > 2) {
+                var ListingBanner = $.grep(banners, function(e) {
+                    return e.bannerTypeID == 3
+                });
+                var ListingBannerLength = ListingBanner.length - 1;
+                var ListingBannerShow = 1;
+
+                console.log(ListingBanner.length);
+
+                if (ListingBanner.length) {
+                    var ListingBannerUrlHtml = '<a rel="' + ListingBanner[0].id + '" href="' + ListingBanner[0].url + '" title="' + ListingBanner[0].name + '"></a>';
+                    var foundHtml = false;
+                    if (ListingBanner[0].adHtml.length > 0) {
+                        foundHtml = true;
+                        ListingBannerUrlHtml = ListingBanner[0].adHtml;
+                        if (ListingBanner[0].bannerScript.length > 0) {
+                            new Function(ListingBanner[0].bannerScript)();
+                        }
+                    }
+
+                    $('.entries-list li:nth-child(2)').after('<li class="single-block-display displays" style="max-height:353px; overflow:hidden; background-image: url(' + ListingBanner[0].image + '">' +
+                        ListingBannerUrlHtml + '</li>');
+
+                    if (ListingBanner[0].url || foundHtml) {
+                        $('.single-block-display').find('a').attr('target', '_blank');
+                    } else {
+                        $('.single-block-display').find('a').removeAttr('href');
+                        $('.single-block-display').find('a').removeAttr('target');
+                    }
+
+                    if (ListingBannerLength >= 1) {
+                        window.setInterval(function() {
+                            if (ListingBannerShow > ListingBannerLength) {
+                                ListingBannerShow = 0;
+                            }
+                            $('.single-block-display').css({
+                                backgroundImage: "url(" + ListingBanner[ListingBannerShow].image + ")"
+                            });
+                            $('.single-block-display').find('a').attr('href', ListingBanner[ListingBannerShow].url);
+                            $('.single-block-display').find('a').attr('rel', ListingBanner[ListingBannerShow].id);
+                            $('.single-block-display').find('a').attr('title', ListingBanner[ListingBannerShow].name);
+                            trackBanner(displaystracked, ListingBanner[ListingBannerShow].id);
+                            displaystracked += ListingBanner[ListingBannerShow].id + ' ';
+                            if (ListingBanner[ListingBannerShow].url) {
+                                $('.single-block-display').find('a').attr('target', '_blank');
+                            } else {
+                                $('.single-block-display').find('a').removeAttr('href');
+                                $('.single-block-display').find('a').removeAttr('target');
+                            }
+                            ListingBannerShow++;
+                        }, 10000);
+                    }
+                }
+            }
+
+            $('.displays').on('click', function(e) {
+                e.stopPropagation();
+                var id = $(this).attr('rel');
+                if (!id) {
+                    id = $(this).find('a').attr('rel');
+                }
+                if (!id) {
+                    id = $(this).find('div').attr('rel');
+                }
+                front_ajax_post('home/track_banners_impressions', {
+                    "banner_id": id,
+                    "impression_type": 1,
+                    "page": window.location.href
+                });
+            });
+
+            $('.displays').each(function() {
+                var id = $(this).attr('rel');
+                if (!id) {
+                    id = $(this).find('a').attr('rel');
+                }
+                if (!id) {
+                    id = $(this).find('div').attr('rel');
+                }
+                trackBanner(displaystracked, id);
+                displaystracked += id + ' ';
+            });
+        });
+
+        function trackBanner(displaystracked, id) {
+            if (id && displaystracked.indexOf(id) == -1) {
+                front_ajax_post('home/track_banners_impressions', {
+                    "banner_id": id,
+                    "impression_type": 2,
+                    "page": window.location.href
+                });
+            }
+        }
+    </script>
+    <script>
+        $('.cookie-strip .cs-confirm').on('click', function() {
+            setCookie('privacyCookie', '1', 365);
+            $('.cookie-strip').removeClass('show');
+        });
+
+        //Determine if privacy policy popup should show
+        var privacyCookie = getCookie('privacyCookie');
+
+        if (!privacyCookie) {
+            //Get privacy policy content
+            $('.cookie-strip').addClass('show');
+        }
+    </script>
+
+
+<style>
+    .site-header .header-bottom nav {
+    float: right;
+    display: inline;
+    height: 96px;
+    padding-right: 75px;
+    padding-left: 95px;
+    background: #8A2BE2;
+    background: -moz-linear-gradient(left,#8A2BE2 0,#8A2BE2 100%);
+    background: -webkit-linear-gradient(left,#8A2BE2 0,#8A2BE2 100%);
+    background: linear-gradient(to right,#8A2BE2 0,#8A2BE2 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fa8015',endColorstr='#fd6b0d',GradientType=1);
+    position: relative;
+}
+.site-header .header-bottom nav:before {
+    content: "";
+    display: block;
+    position: absolute;
+    left: -22px;
+    border-right: 22px solid #8A2BE2;
+    border-top: 96px solid transparent;
+    border-bottom: 0 solid transparent;
+}
+
+main.content .header-banner h1 {
+    font-size: 45px;
+    font-weight: 700;
+    color: #8A2BE2;
+    text-transform: uppercase;
+    line-height: 55px;
+    text-align: left;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 100px;
+}
+</style>
+</body>
+
+</html>
